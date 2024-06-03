@@ -38,7 +38,7 @@ export const UpdateGroupChatModal = ({ fetchagain, setFetchagain ,fetchMessages}
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.put("http://localhost:5000/api/chat/removegroup",{
+            const { data } = await axios.put("blinkchat-five.vercel.app/api/chat/removegroup",{
                 chatId : selectedChat._id,
                 userId : user1._id,
             }, config);
@@ -76,7 +76,7 @@ export const UpdateGroupChatModal = ({ fetchagain, setFetchagain ,fetchMessages}
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.put("http://localhost:5000/api/chat/rename", {
+            const { data } = await axios.put("blinkchat-five.vercel.app/api/chat/rename", {
                 chatName: groupChatName,
                 chatId: selectedChat._id,
             }, config);
@@ -115,7 +115,7 @@ export const UpdateGroupChatModal = ({ fetchagain, setFetchagain ,fetchMessages}
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.get(`http://localhost:5000/api/user?search=${search}`, config);
+            const { data } = await axios.get(`blinkchat-five.vercel.app/api/user?search=${search}`, config);
             const finaldata = data.users;
             // console.log(data);
             // console.log(finaldata);
@@ -166,7 +166,7 @@ export const UpdateGroupChatModal = ({ fetchagain, setFetchagain ,fetchMessages}
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.put("http://localhost:5000/api/chat/addgroup",{
+            const { data } = await axios.put("blinkchat-five.vercel.app/api/chat/addgroup",{
                 chatId : selectedChat._id,
                 userId : user1._id,
             }, config);

@@ -34,6 +34,7 @@ export const Login = () => {
                 headers: {
                     'Content-type': 'application/json'
                 },
+                withCredentials: true,
             };
             const { data } = await axios.post('https://blinkchat-five.vercel.app/api/user/login', {email, password}, config);
             toast({

@@ -9,11 +9,11 @@ const path = require('path');
 
 const app = express();
 app.use(cors(
-  {
-    origin: ["https://mern-chat-app-ivory.vercel.app/"],
-    methods: ["POST", "GET","PUT"],
-    credentials: true
-  }
+  // {
+  //   origin: ["https://mern-chat-app-ivory.vercel.app/"],
+  //   methods: ["POST", "GET","PUT"],
+  //   credentials: true
+  // }
 ))
 app.use(express.json());
 dotenv.config()

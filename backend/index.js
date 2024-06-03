@@ -1,4 +1,4 @@
-const express =  require('express')
+const express = require('express')
 const connectDB = require("./config/db");
 const dotenv = require('dotenv')
 const cors = require('cors')
@@ -9,11 +9,11 @@ const path = require('path');
 
 const app = express();
 app.use(cors(
-  // {
-  //   origin: ["https://mern-chat-app-ivory.vercel.app/"],
-  //   methods: ["POST", "GET","PUT"],
-  //   credentials: true
-  // }
+  {
+    origin: "https://mern-chat-app-ivory.vercel.app",
+    methods: ["POST", "GET", "PUT"],
+    credentials: true
+  }
 ))
 app.use(express.json());
 dotenv.config()
@@ -37,14 +37,24 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running..");
   });
 }
-  
+
 // "frontend", "dist", "index.html"
- 
+
 ///  deployment code ---------------------------------
 
 //error handling middlewares
 app.use(notFound);
 app.use(errorHandler);
+
+// Handle preflight requests
+app.options('*', cors(
+  {
+    origin: "https://mern-chat-app-ivory.vercel.app",
+    methods: ["POST", "GET", "PUT"],
+    credentials: true
+  }
+));
+
 
 const server = app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
@@ -53,7 +63,7 @@ const server = app.listen(port, () => {
 const io = require('socket.io')(server, {
   pingTimeout: 60000,
   cors: {
-    origin: 'http://127.0.0.1:5173',
+    origin: 'https://mern-chat-app-ivory.vercel.app',
   },
 });
 

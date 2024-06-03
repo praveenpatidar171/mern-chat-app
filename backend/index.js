@@ -59,6 +59,7 @@ const io = require('socket.io')(server, {
   pingTimeout: 60000,
   cors: {
     origin: 'https://mern-chat-app-ivory.vercel.app',
+    credentials: true,
   },
 });
 

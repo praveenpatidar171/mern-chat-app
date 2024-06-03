@@ -31,8 +31,9 @@ export const Login = () => {
         }
         try {
             const config = {
-                credentials: 'include',
                 headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
                     'Content-type': 'application/json'
                 },
             };

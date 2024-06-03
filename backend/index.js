@@ -51,13 +51,6 @@ app.use(errorHandler);
 // Handle preflight requests
 app.options('*', cors(corsOptions));
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://mern-chat-app-ivory.vercel.app");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-})
-
 
 const server = app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

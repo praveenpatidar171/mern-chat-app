@@ -1,4 +1,8 @@
-const express = require('express')
+// const express = require('express')
+
+import express from 'express'
+
+
 const connectDB = require("./config/db");
 const dotenv = require('dotenv')
 const cors = require('cors')

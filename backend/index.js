@@ -10,7 +10,7 @@ const path = require('path');
 const app = express();
 app.use(cors(
   {
-    origin: ["https://deploy-mern-frontend.vercel.app"],
+    origin: ["https://mern-chat-app-ivory.vercel.app"],
     methods: ["POST", "GET","PUT"],
     credentials: true
   }

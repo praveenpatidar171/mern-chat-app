@@ -92,7 +92,7 @@ export const SignUp = () => {
                     'Content-type': 'application/json'
                 },
             };
-            const { data } = await axios.post('blinkchat-five.vercel.app/api/user/', { name, email, password, pic }, config);
+            const { data } = await axios.post('https://blinkchat-five.vercel.app/api/user/', { name, email, password, pic }, config);
             toast({
                 title: 'SignUp Successfull.',
                 status: 'success',

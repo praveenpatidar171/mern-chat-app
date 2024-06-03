@@ -22,7 +22,7 @@ export const Mychats = ({ fetchagain }) => {
                         Authorization: `Bearer ${user.token}`
                     }
                 }
-                const { data } = await axios.get("http://localhost:5000/api/chat/", config);
+                const { data } = await axios.get("https://blinkchat-five.vercel.app/api/chat/", config);
                 setChats(data);
                 // console.log(data);
 

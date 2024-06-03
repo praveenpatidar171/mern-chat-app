@@ -12,7 +12,7 @@ import io from 'socket.io-client'
 import Lottie from 'react-lottie'
 import animationData from "../animations/typing.json";
 
-const ENDPOINT = 'blinkchat-five.vercel.app'
+const ENDPOINT = 'https://blinkchat-five.vercel.app'
 
 let socket, selectedChatCompare;
 
@@ -48,7 +48,7 @@ export const SingleChat = ({ fetchagain, setFetchagain }) => {
                 }
             }
             setLoading(true);
-            const { data } = await axios.get(`blinkchat-five.vercel.app/api/message/${selectedChat._id}`, config);
+            const { data } = await axios.get(`https://blinkchat-five.vercel.app/api/message/${selectedChat._id}`, config);
 
             // console.log(data);
             setMessages(data);
@@ -108,7 +108,7 @@ export const SingleChat = ({ fetchagain, setFetchagain }) => {
                     }
                 }
                 setNewMessage("");
-                const { data } = await axios.post("blinkchat-five.vercel.app/api/message/", {
+                const { data } = await axios.post("https://blinkchat-five.vercel.app/api/message/", {
                     content: newMessage,
                     chatId: selectedChat._id
                 }, config);

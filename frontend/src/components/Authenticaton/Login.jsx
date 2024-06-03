@@ -32,8 +32,9 @@ export const Login = () => {
         try {
             const config = {
                 headers: {
-                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Origin": "https://mern-chat-app-ivory.vercel.app",
                     "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+                    "Access-Control-Allow-Credentials": true,
                     'Content-type': 'application/json'
                 },
             };

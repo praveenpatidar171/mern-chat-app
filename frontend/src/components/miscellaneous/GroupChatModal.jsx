@@ -28,7 +28,7 @@ export const GroupChatModal = ({ children }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.get(`blinkchat-five.vercel.app/api/user?search=${search}`, config);
+            const { data } = await axios.get(`https://blinkchat-five.vercel.app/api/user?search=${search}`, config);
             const finaldata = data.users;
             // console.log(data);
             // console.log(finaldata);
@@ -86,7 +86,7 @@ export const GroupChatModal = ({ children }) => {
                     Authorization: `Bearer ${user.token}`
                 }
             }
-            const { data } = await axios.post("blinkchat-five.vercel.app/api/chat/group", {
+            const { data } = await axios.post("https://blinkchat-five.vercel.app/api/chat/group", {
                 name: groupName,
                 users: JSON.stringify(selectedUsers.map((u) => u._id))
             }, config);

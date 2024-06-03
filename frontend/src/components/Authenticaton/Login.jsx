@@ -36,7 +36,7 @@ export const Login = () => {
                 },
                 withCredentials: true,
             };
-            const { data } = await axios.post('https://blinkchat-five.vercel.app/api/user/login', {email, password}, config);
+            const { data } = await axios.post('https://mern-chat-app-api-chi.vercel.app/api/user/login', {email, password}, config);
             toast({
                 title: 'Login Successfull.',
                 status: 'success',

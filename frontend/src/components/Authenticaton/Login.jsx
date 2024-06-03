@@ -31,6 +31,7 @@ export const Login = () => {
         }
         try {
             const config = {
+                credentials: 'include',
                 headers: {
                     'Content-type': 'application/json'
                 },

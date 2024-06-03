@@ -11,7 +11,7 @@ const app = express();
 
 const corsOptions = {
   origin: 'https://mern-chat-app-ivory.vercel.app',
-  methods: ['POST', 'GET', 'PUT'],
+  methods: ['POST', 'GET', 'PUT', 'OPTIONS'],
   credentials: true
 };
 

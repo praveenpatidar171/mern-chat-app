@@ -8,17 +8,18 @@ const path = require('path');
 
 
 const app = express();
-app.use(cors(
-  {
-    origin: "https://mern-chat-app-ivory.vercel.app",
-    methods: ["POST", "GET", "PUT"],
-    credentials: true
-  }
-))
+
+const corsOptions = {
+  origin: 'https://mern-chat-app-ivory.vercel.app',
+  methods: ['POST', 'GET', 'PUT'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 dotenv.config()
 connectDB();
-const port = process.env.PORT
+const port = process.env.PORT || 5000;
 
 app.use('/api', mainrouter)
 
@@ -47,13 +48,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Handle preflight requests
-app.options('*', cors(
-  {
-    origin: "https://mern-chat-app-ivory.vercel.app",
-    methods: ["POST", "GET", "PUT"],
-    credentials: true
-  }
-));
+app.options('*', cors(corsOptions));
 
 
 const server = app.listen(port, () => {
